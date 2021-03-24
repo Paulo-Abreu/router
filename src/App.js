@@ -1,37 +1,24 @@
-import Pokes from './components/pokes';
-import axios from "axios";
-import './App.css';
-import React, { useState, useEffect} from "react";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import DetailsPokes from "./components/detailsPoke";
+import Home from './Home';
+
 
 const App = () => {
-    
-    const [characters, getCharacter] = useState([]);
-   
-    
-       /* const handleChoose = (props) => {
-          axios.get(`https://pokeapi.co/api/v2/pokemon/${props.name}`).then((res) => {
-            getCharacter(res.data);
-          });
-        };*/
-
-
-        axios.get("https://pokeapi.co/api/v2/pokemon/").then((res) => {
-          getCharacter(res.data.results);
-        });
-      
-    
-      console.log(characters);
-   return(
-   <div className="HomeCards">
-
-    {characters.length > 0 &&
-      characters.map(({name}) => (
-        <Pokes name={name} />
-      ))
-    } 
-       
+  return (
+    <div className="App">
+      <h1>Pokedex</h1> 
+      <Router>
+        <Switch>
+        <Route path="/" exact={true}>            
+            <Home />
+        </Route>
+          <Route path="/pokes-details/:name">
+            <DetailsPokes />
+          </Route>
+        </Switch>
+      </Router>
     </div>
-   )
-  
-   };
+  );
+};
 export default App;

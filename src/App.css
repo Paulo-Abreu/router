@@ -1,31 +1,56 @@
+*{
+  background: #eee;
+
+}
+
+h1 {
+	letter-spacing: 3px;
+}
+
+.App{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato';
+    margin: 0;
+}
+
+
+
 .HomeCards{
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  overflow: hidden;
+	flex-wrap: wrap;
+	align-items: space-between;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1200px;
+  transition: 0.5s;
+  
+  
 }
 .card{
-  display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
-  grid-template-areas: "image" "text" "stats";
-  border-radius: 18px;
-  background: white;
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-  font-family: roboto;
-  text-align: center;
-  padding: 20px;
-  margin: 15px;
-}
-.card-image{
-  grid-area: image;
+  width: 210px ;
+  padding: 45px ;
 }
 .card-text{
-  grid-area: text;
+  border-radius: 20px;
+	box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
 }
-.card-stats{
-  grid-area: stats;
+.card:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 100;
+  
+}
+#link{
+
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: black;
+
 }
